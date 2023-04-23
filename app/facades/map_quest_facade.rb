@@ -1,6 +1,4 @@
 class MapQuestFacade
-	attr_reader :city_state
-
 	def initialize(params = {})
 		@city_state = params[:location]
 	end
@@ -11,7 +9,7 @@ class MapQuestFacade
 			result[:locations].map do |location|
 				Location.new(location)
 			end
-		end.flatten
+		end.flatten.first
 	end
 
 	def service

@@ -1,10 +1,6 @@
 class WeatherFacade
-	def initialize(params)
-		@params = params
-	end
-
-	def get_forecast
-		forecast = service.get_forecast(@params[:coordinates])
+	def get_forecast(coordinates)
+		forecast = service.get_forecast(coordinates)
 		Forecast.new(forecast)
 	end
 
