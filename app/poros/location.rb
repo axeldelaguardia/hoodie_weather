@@ -10,4 +10,8 @@ class Location
 		@longitude = info[:latLng][:lng]
 		@latitude = info[:latLng][:lat]
 	end
+
+	def lat_lng
+		[@latitude, @longitude].join(",")
+	end
 end
