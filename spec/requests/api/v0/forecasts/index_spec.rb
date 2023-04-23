@@ -58,5 +58,31 @@ describe "Forecast Request", :vcr do
 				expect(hour[:icon]).to be_a String
 			end
 		end
+
+		it "returns an error when no location params are sent" do
+			get "/api/v0/forecast"
+
+			expect(response).to have_http_status(400)
+
+			response_body = JSON.parse(response.body, symbolize_names: true)
+
+			expect(response_body.keys).to match([:message, :error])
+			expect(response_body[:message]).to eq("your query could not be completed")
+			expect(response_body[:error]).to eq("missing location params")
+		end
+
+		it "returns an error when location params are incorrect" do
+			get "/api/v0/forecast", params: {location: "123123123123"}
+
+			expect(response).to have_http_status(400)
+
+			response_body = JSON.parse(response.body, symbolize_names: true)
+
+			expect(response_body).to be_a Hash
+			expect(response_body.keys).to match([:message, :error])
+
+			expect(response_body[:message]).to eq("your query could not be completed")
+			expect(response_body[:error]).to eq("location must be a city,st")
+		end
 	end
 end
