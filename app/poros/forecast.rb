@@ -6,6 +6,7 @@ class Forecast
 							
 	def initialize(info)
 		@id = nil
+		@location = info[:location]
 		@current_weather = get_current_weather(info[:current])
 		@daily_weather = get_daily_weather(info[:forecast][:forecastday])
 		@hourly_weather = get_hourly_weather(info[:forecast][:forecastday].first)

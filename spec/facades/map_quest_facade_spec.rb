@@ -7,14 +7,10 @@ describe "Map Quest Facade" do
 		}
 
 		@facade = MapQuestFacade.new(params)
-		
-		@facade.long_lat.each do |location|
-			expect(location).to be_a Location
 
-			expect(location).to respond_to(:city)
-			expect(location).to respond_to(:state)
-			expect(location).to respond_to(:longitude)
-			expect(location).to respond_to(:latitude)
-		end
+		expect(@facade.long_lat).to respond_to(:city)
+		expect(@facade.long_lat).to respond_to(:state)
+		expect(@facade.long_lat).to respond_to(:longitude)
+		expect(@facade.long_lat).to respond_to(:latitude)
 	end
 end

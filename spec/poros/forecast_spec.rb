@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe Forecast, :vcr do
-	let(:facade) { WeatherFacade.new(:coordinates => "39.854938,-105.035477") }
-	let(:forecast) { facade.get_forecast }
+	let(:facade) { WeatherFacade.new }
+	let(:forecast) { facade.get_forecast("39.854938,-105.035477") }
 
 	it "exists" do
 		expect(forecast).to be_a Forecast
