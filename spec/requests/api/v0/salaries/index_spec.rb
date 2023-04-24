@@ -38,4 +38,34 @@ describe "Salaries Request", :vcr do
 			expect(salary[:max]).to be_a String
 		end
 	end
+
+	it "returns an error if no destination is given" do
+		get api_v0_salaries_path, params: { destination: "" }
+
+		expect(response).to have_http_status(400)
+
+		response_body = JSON.parse(response.body, symbolize_names: true)
+
+		expect(response_body).to be_a Hash
+		expect(response_body.keys).to match([:message, :error])
+		expect(response_body[:message]).to be_a String
+		expect(response_body[:message]).to eq("your query could not be completed")
+		expect(response_body[:error]).to be_a String
+		expect(response_body[:error]).to eq("params must be included")
+	end
+
+	it "returns an error when no params are given" do
+		get api_v0_salaries_path
+
+		expect(response).to have_http_status(400)
+
+		response_body = JSON.parse(response.body, symbolize_names: true)
+
+		expect(response_body).to be_a Hash
+		expect(response_body.keys).to match([:message, :error])
+		expect(response_body[:message]).to be_a String
+		expect(response_body[:message]).to eq("your query could not be completed")
+		expect(response_body[:error]).to be_a String
+		expect(response_body[:error]).to eq("params must be included")
+	end
 end
