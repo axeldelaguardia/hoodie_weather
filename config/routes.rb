@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 			resources :users, only: :create
 			post "/sessions", to: "sessions#login"
 			resources :road_trip, only: :index
+			resources :salaries, only: :index
 		end
 	end
 end
