@@ -14,7 +14,11 @@ class MapQuestFacade
 
 	def road_trip(to, from)
 		data = service.get_directions(to, from)
-		RoadTrip.new(data[:route])
+		if data[:info][:messages].empty?
+			RoadTrip.new(data[:route])
+		else
+			RoadTrip.new(to: to, from: from)
+		end
 	end
 
 	def service
