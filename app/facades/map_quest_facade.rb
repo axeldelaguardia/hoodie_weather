@@ -12,6 +12,11 @@ class MapQuestFacade
 		end.flatten.first
 	end
 
+	def road_trip(to, from)
+		data = service.get_directions(to, from)
+		RoadTrip.new(data[:route])
+	end
+
 	def service
 		@service ||= MapQuestService.new
 	end

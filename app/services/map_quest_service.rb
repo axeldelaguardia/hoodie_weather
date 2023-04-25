@@ -11,4 +11,18 @@ class MapQuestService
 		end
 		JSON.parse(response.body, symbolize_names: true)
 	end
+
+	def get_directions(to, from)
+		response = connection.get("/directions/v2/route") do |req|
+			req.params[:to] = to
+			req.params[:from] = from
+			req.params[:outFormat] = "json"
+			req.params[:routeType] = "fastest"
+			req.params[:ambiguities] = "ignore"
+			req.params[:doReverseGeocode] = "false"
+			req.params[:enhancedNarrative] = "false"
+			req.params[:avoidTimedConditions] = "false"
+		end
+		JSON.parse(response.body, symbolize_names: true)
+	end
 end
