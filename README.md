@@ -7,6 +7,7 @@ Hoodie Weather is an API designed for road trip planning that enables users to a
 
 <br>
 
+
 Find Me On:
 
 [![linkedin profile](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/axeldelaguardia)
