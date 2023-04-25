@@ -7,7 +7,14 @@ Hoodie Weather is an API designed for road trip planning that enables users to a
 
 <br>
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AxelDeLaGuardia)](https://github.com/axeldelaguardia/github-readme-stats)
+Find Me On:
+
+[![linkedin profile](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/axeldelaguardia)
+
+Built With:
+
+![Ruby 3.1.1](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 
 
@@ -291,11 +298,3 @@ Hoodie Weather is an API designed for road trip planning that enables users to a
 	}
   ```
 </details>
-
-<br>
-
----
-### Built with:
-![Ruby 3.1.1](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
