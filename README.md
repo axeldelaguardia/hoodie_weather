@@ -6,7 +6,7 @@
 Hoodie Weather is an API designed for road trip planning that enables users to anticipate the weather conditions in their destination city via a front-end application. To utilize this API, users must create an account and login to access its functionalities. After authentication, the API provides three endpoints to retrieve various types of information, including weather data for a specific city, road trip planning details, and salary information for a particular location.
 
 <br>
-
+<br>
 
 Find Me On:
 
