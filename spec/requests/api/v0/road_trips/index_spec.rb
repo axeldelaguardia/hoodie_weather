@@ -2,6 +2,9 @@ require "rails_helper"
 
 describe "Road Trip Request" do
 	let!(:user) { create(:user, api_key: "test_key") }
+	before do
+		allow(DateTime).to receive(:now).and_return(DateTime.parse("2023-04-25 11:42 -0600"))
+	end
 
 	it "returns road trip data for destination provided", :vcr do
 		params = { 
@@ -86,9 +89,9 @@ describe "Road Trip Request" do
 		expect(attributes[:weather_at_eta]).to be_a Hash
 		expect(attributes[:weather_at_eta].keys).to match([:datetime, :temperature, :condition])
 		expect(attributes[:weather_at_eta][:datetime]).to be_a String
-		expect(attributes[:weather_at_eta][:datetime]).to eq("2023-04-27 03:00")
+		expect(attributes[:weather_at_eta][:datetime]).to eq("2023-04-27 02:00")
 		expect(attributes[:weather_at_eta][:temperature]).to be_a Float
-		expect(attributes[:weather_at_eta][:temperature]).to eq(64.8)
+		expect(attributes[:weather_at_eta][:temperature]).to eq(65.7)
 		expect(attributes[:weather_at_eta][:condition]).to be_a String
 		expect(attributes[:weather_at_eta][:condition]).to eq("Clear")
 	end

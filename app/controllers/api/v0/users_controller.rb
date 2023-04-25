@@ -4,7 +4,7 @@ class Api::V0::UsersController < ApplicationController
 	wrap_parameters :user, include: [:email, :password, :password_confirmation]
 
 	def create
-		user = User.create(user_params)
+		user = User.new(user_params)
 		if user.save
 			render json: UserSerializer.new(user)
 		else
