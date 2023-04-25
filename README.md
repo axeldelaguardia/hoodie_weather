@@ -1,33 +1,10 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Hoodie Weather
 
 JSON Contract:
 
+```
 Weather Request
 
-REQUEST
 GET
 {
   "data": {
@@ -68,10 +45,10 @@ GET
     }
   }
 }
-
+```
+```
 User Creation
 
-REQUEST
 POST
 {
 	"email": "whatever@example.com",
@@ -93,10 +70,10 @@ body:
     }
   }
 }
-
+```
+```
 Login
 
-REQUEST
 POST
 {
 	"email": "whatever@example.com",
@@ -114,10 +91,10 @@ RESPONSE
 		}
 	}
 }
-
+```
+```
 Road Trip
 
-REQUEST
 POST 
 body:
 {
@@ -142,8 +119,9 @@ body:
 		}
 	}
 }
-
-3 Major Key Points for this Project
+```
+---
+## 3 Major Key Points for this Project
 
 1. Retrieve Weather for a City
 APIs Consumed:
@@ -160,8 +138,11 @@ Weather API
 
 
 
-ENDPOINTS
-GET "/api/v0/forecast?location=< CITY,ST >" - to retrieve weather data
-POST "/api/v0/users" - to create a user and receive an API key
+## ENDPOINTS
+### Forecast
+<summary>GET: Forecast for a City</summary>
+
+```GET "/api/v0/forecast?location=< CITY,ST >" - to retrieve weather data```
+```POST "/api/v0/users" - to create a user and receive an API key```
 POST "/api/v0/sessions"
 POST "/api/v0/road_trip"
